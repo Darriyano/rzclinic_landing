@@ -1,0 +1,136 @@
+.contacts-intro-screen {
+    display: flex;
+    padding: 64px 120px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.contacts-intro-screen .textframe {
+    color: #660ff1;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: -5.0px;
+    line-height: 90px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.contacts-intro-screen .secondary {
+    width: 525px;
+    color: #1b1376;
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.contacts-intro-screen .contacts {
+    display: flex;
+    padding: 0px 120px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.contacts-next {
+    display: flex;
+    flex-direction: row;
+    padding: 0 120px 120px 120px;
+    justify-content: space-between;
+
+}
+
+.map {
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+.contacts-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.contacts-text-block p {
+    color: #660FF1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contacts-text-block ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    list-style-type: none;
+}
+
+.contacts-text-block ul li {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+
+    z-index: 1000;
+}
+
+.contacts-text-block .contacts-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-text-block .contacts-list span {
+    font-size: 16px;
+    color: #d2c1ec;
+}
+
+@media (max-width: 800px) {
+    .contacts-intro-screen {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        padding: 4vh 6vw;
+        position: relative;
+        width: 100%;
+    }
+
+    .contacts-intro-screen .textframe {
+        font-size: 52px;
+        letter-spacing: -1.0px;
+    }
+
+    .contacts-intro-screen .secondary {
+        width: 100%;
+        text-align: justify;
+
+    }
+
+    .contacts-next {
+        padding: 4vh 6vw;
+        gap: 52px;
+        flex-direction: column-reverse;
+    }
+
+    .map {
+        position: relative;
+        width: 100%;
+
+    }
+}
+
+@media (max-width: 920px) {
+    .contacts-intro-screen {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,156 @@
+.price-intro-screen {
+    display: flex;
+    padding: 64px 120px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.price-intro-screen .textframe {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: -5.0px;
+    line-height: 90px;
+    position: relative;
+    color: #12CA97;
+}
+
+
+.price-intro-screen .secondary {
+    width: 525px;
+    color: #1b1376;
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.accordeons {
+    display: flex;
+    padding: 0px 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    align-self: stretch;
+}
+
+.accordeons .block {
+    display: flex;
+    width: 100%;
+    padding: 32px 0px 20px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: space-between;
+    justify-content: space-between;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.accordeons .section {
+    width: 100%;
+}
+
+.accordeons .section p {
+    color: #1b1376;
+    text-align: justify;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 100%; /* 28px */
+}
+
+.accordeons .block span {
+    color: #665adf;
+    text-align: justify;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 100%; /* 28px */
+}
+
+.accordeons .block details {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-self: stretch;
+    border-bottom: 1.5px solid #9efbdd;
+    background: #d1fff3;
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не уменьшал ширину */
+}
+
+.accordeons .block summary {
+    display: flex;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+    font-weight: normal;
+    list-style: none; /* Убираем стандартный маркер */
+    background: #BEF9E9; /* Можно добавить фон для удобства */
+}
+
+.accordeons .block summary::after {
+    content: "▶"; /* Закрытая стрелка */
+    transition: transform 0.2s;
+}
+
+.accordeons .block details[open] summary::after {
+    content: "▼"; /* Открытая стрелка */
+}
+
+.accordeons .block details p {
+    padding: 12px 20px;
+    margin: 0;
+    background: #f7fffc; /* Светлее, чтобы выделить */
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+@media (max-width: 800px) {
+    .price-intro-screen {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        padding: 4vh 6vw 0 6vw;
+        position: relative;
+
+    }
+
+    .price-intro-screen .textframe {
+        color: #12CA97;
+        font-size: 52px;
+        font-weight: 700;
+        letter-spacing: -3.00px;
+        line-height: 90px;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    .price-intro-screen .secondary {
+        color: #000;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -1.00px;
+        line-height: 25px;
+        position: relative;
+        text-align: justify;
+        width: 100%;
+    }
+
+    .accordeons {
+        padding: 8vh 6vw;
+    }
+}
+
+@media (max-width: 920px) {
+    .price-intro-screen {
+        padding-top: 0;
+    }
+}
+
+

@@ -1,0 +1,244 @@
+.details-intro-screen {
+    display: flex;
+    padding: 64px 120px 80px 120px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.details-intro-screen span {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    line-height: 90px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+
+    color: #12CA97;
+    font-style: normal;
+}
+
+.details-intro-screen .vector-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: fit-content;
+}
+
+.details-intro-screen .vector-image img {
+    width: 320px;
+    flex-shrink: 0;
+    position: relative;
+    transform: rotate(-8deg);
+    z-index: 2;
+    margin-right: 140px;
+}
+
+.vector-image .shape-layout {
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #12CA97;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+.new-frame {
+    display: flex;
+    padding: 20px 120px 80px 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.new-frame p {
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px; /* 93.75% */
+    letter-spacing: -1.6px;
+}
+
+.new-frame span {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 30px; /* 150% */
+    letter-spacing: -1px;
+}
+
+.accordeons-details {
+    display: flex;
+    padding: 0px 120px 80px 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    align-self: stretch;
+
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px; /* 93.75% */
+    letter-spacing: -1px;
+}
+
+
+.accordeons-details button {
+    padding: 18px 55px;
+    flex-shrink: 0;
+    border: none;
+
+    border-radius: 25px;
+    background: #660FF1;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.accordeons-details button:hover {
+    cursor: pointer;
+    transform: scale(1.03); /* Small zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06); /* Stronger shadow */
+}
+
+.accordeons-details button:active {
+    transform: scale(0.97); /* Slight shrink effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.09); /* Stronger shadow */
+}
+
+.accordeons-details .block {
+    display: flex;
+    width: 100%;
+    padding: 32px 0px 20px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: space-between;
+    justify-content: space-between;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.accordeons-details .block span {
+    color: #665adf;
+    text-align: justify;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 100%; /* 28px */
+}
+
+.accordeons-details .block details {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-self: stretch;
+    border-bottom: 1.5px solid #9efbdd;
+    background: #d1fff3;
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не уменьшал ширину */
+}
+
+.accordeons-details .block summary {
+    display: flex;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+    font-weight: normal;
+    list-style: none; /* Убираем стандартный маркер */
+    background: #BEF9E9; /* Можно добавить фон для удобства */
+}
+
+.accordeons-details .block summary::after {
+    content: "▶"; /* Закрытая стрелка */
+    transition: transform 0.2s;
+}
+
+.accordeons-details .block details[open] summary::after {
+    content: "▼"; /* Открытая стрелка */
+}
+
+.accordeons-details .block details p {
+    padding: 12px 20px;
+    margin: 0;
+    background: #f7fffc; /* Светлее, чтобы выделить */
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+@media (max-width: 800px) {
+    .details-intro-screen {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: fit-content;
+        padding: 8vh 6vw 1vh 6vw;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+    }
+
+    .details-intro-screen span {
+        font-size: 60px;
+        font-weight: bold;
+        position: relative;
+        width: fit-content;
+        align-self: flex-start;
+
+        color: #12CA97;
+        font-style: normal;
+    }
+
+    .details-intro-screen .vector-image {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .details-intro-screen .vector-image img {
+        width: 140px;
+        flex-shrink: 0;
+        position: relative;
+        transform: rotate(-8deg);
+        z-index: 2;
+        margin-right: 80px;
+    }
+
+    .vector-image .shape-layout {
+        width: 160px;
+        height: 160px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: #12CA97;
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .new-frame {
+        padding: 8vh 6vw 0vh 6vw;
+    }
+
+    .accordeons-details {
+        padding: 8vh 6vw;
+    }
+}

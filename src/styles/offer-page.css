@@ -1,0 +1,104 @@
+.offers-intro-screen {
+    display: flex;
+    padding: 80px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.offers-intro-screen .textframe {
+    color: #660ff1;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: -5.0px;
+    line-height: 90px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+
+.offers-intro-screen .main-texts2 {
+    color: #12CA97;
+}
+
+.offers-intro-screen .secondary {
+    width: 525px;
+    color: #1b1376;
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.all-offers-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    position: relative;
+    height: fit-content;
+    justify-items: center; /* Центрирование карточек по горизонтали */
+    align-items: center; /* Центрирование карточек по вертикали */
+    padding-bottom: 80px;
+}
+
+
+@media (max-width: 1250px) and (min-width: 800px) {
+    .all-offers-wrapper {
+        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+    }
+
+    .offers-intro-screen {
+        padding: 8vh 6vw 0 6vw;
+        gap: 32px;
+    }
+
+    .offers-intro-screen .secondary {
+        text-align: justify;
+    }
+}
+
+@media (max-width: 920px) {
+    .all-offers-wrapper {
+        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+    }
+
+    .offers-intro-screen {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        padding: 4vh 6vw;
+        position: relative;
+        width: 100%;
+    }
+
+    .offers-intro-screen .textframe {
+        font-size: 52px;
+        letter-spacing: -1.0px;
+    }
+
+    .offers-intro-screen .secondary {
+        width: 100%;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 920px) {
+    .offers-intro-screen {
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .all-offers-wrapper {
+        grid-template-columns: repeat(3, 1fr); /* Два столбца */
+    }
+
+    .offers-intro-screen {
+        padding: 4vh 16vw;
+        height: fit-content;
+    }
+}
+
+
+

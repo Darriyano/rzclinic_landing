@@ -1,0 +1,200 @@
+.offer-card-wrapper {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+    position: relative;
+    width: 484px;
+    height: 593px;
+    margin-top: 64px;
+
+    box-shadow: 0px 0px 15px 0px rgba(150, 150, 150, 0.25);
+    z-index: 1;
+    text-align: justify;
+
+}
+
+.offer-card-wrapper .div {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.offer-card-wrapper .offer-card-text-wrapper {
+    color: #660ff1;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1.60px;
+    line-height: normal;
+    margin-top: -1.00px;
+    position: relative;
+    width: fit-content;
+}
+
+.offer-card-wrapper .offer-image-place {
+    align-self: stretch;
+    height: 133px;
+    position: relative;
+    width: 100%;
+}
+
+.offer-card-wrapper .explanation {
+    align-self: stretch;
+    color: #1b1376;
+    font-size: 20px;
+
+    letter-spacing: -1.00px;
+    line-height: 30px;
+    position: relative;
+}
+
+.offer-card-wrapper .offer-card-button {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+}
+
+.offer-card-wrapper .overlap-group {
+    border: 2px solid #12ca97;
+    background-color: #fff;
+    border-radius: 25px;
+    height: 52px;
+    position: relative;
+    width: 448px;
+
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.offer-card-wrapper .offer-card-text-wrapper-2 {
+    color: #000000;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 0;
+}
+
+.offer-card-wrapper .overlap {
+    background: linear-gradient(
+            180deg,
+            rgb(18, 202, 151) 0%,
+            rgb(53, 157, 248) 100%
+    );
+    border-radius: 25px;
+    border: none;
+    height: 52px;
+    position: relative;
+    width: 448px;
+
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.offer-card-wrapper .overlap:hover {
+    cursor: pointer;
+    transform: scale(1.03); /* Small zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06); /* Stronger shadow */
+}
+
+.offer-card-wrapper .overlap:active {
+    transform: scale(0.97); /* Slight shrink effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.09); /* Stronger shadow */
+}
+
+.offer-card-wrapper .overlap-group:hover {
+    cursor: pointer;
+    transform: scale(1.03); /* Small zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06); /* Stronger shadow */
+}
+
+.offer-card-wrapper .overlap-group:active {
+    transform: scale(0.97); /* Slight shrink effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.09); /* Stronger shadow */
+}
+
+.offer-card-wrapper .offer-card-text-wrapper-3 {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+@media (max-width: 1250px) and (min-width: 800px) {
+    .offer-card-wrapper {
+        width: 55vw;
+        height: 550px;
+    }
+
+    .offer-card-wrapper .overlap {
+        width: 35vw;
+    }
+
+    .offer-card-wrapper .overlap-group {
+        width: 35vw;
+    }
+}
+
+@media (max-width: 538px) {
+    .offer-card-wrapper {
+        align-items: center;
+        padding: 40px 20px;
+        position: relative;
+        width: 85vw;
+        height: fit-content;
+        margin-top: 64px;
+        justify-content: space-between;
+        box-shadow: 0 0 15px 0 rgba(150, 150, 150, 0.25);
+        z-index: 1;
+    }
+
+    .offer-card-wrapper .offer-image-place {
+        align-self: stretch;
+        height: 100px;
+        position: relative;
+        width: 100%;
+    }
+
+    .offer-card-wrapper .offer-card-button {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: relative;
+        margin-top: 16px;
+    }
+
+    .offer-card-wrapper .overlap {
+        width: 70vw;
+    }
+
+    .offer-card-wrapper .overlap-group {
+        width: 70vw;
+    }
+
+    .offer-card-wrapper .offer-card-text-wrapper-2 {
+        color: #000000;
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+    }
+
+    .offer-card-wrapper .offer-card-text-wrapper-3 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .offer-card-wrapper {
+        width: 85vw;
+        height: fit-content;
+    }
+}

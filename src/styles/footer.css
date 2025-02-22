@@ -1,0 +1,132 @@
+.footer-screen {
+    display: flex;
+    padding: 32px 80px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+
+    flex-direction: row;
+    gap: 12px;
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+
+    border-top: #f1f1f1 solid 1.5px;
+}
+
+.footer-screen .first-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.first-text-block img {
+    width: 300px;
+}
+
+.footer-screen .text-main-block {
+    color: #000;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.footer-screen .second-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.second-text-block p {
+    color: #C0C0C0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.second-text-block .contact-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.second-text-block ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.second-text-block ul li {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.footer-screen .third-text-block {
+    display: flex;
+    width: 263px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.third-text-block p {
+    color: #C0C0C0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.third-text-block ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+
+    list-style-type: none;
+}
+
+@media (max-width: 900px) {
+    .first-text-block img {
+        width: 190px;
+    }
+
+    .footer-screen {
+        display: flex;
+        padding: 64px 80px;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+
+        flex-direction: column-reverse;
+        gap: 64px;
+        background-color: #fff;
+        position: relative;
+        width: 100%;
+        height: fit-content;
+
+        overflow-x: hidden;
+
+    }
+
+    .footer-screen .first-text-block {
+        gap: 14px;
+    }
+
+}

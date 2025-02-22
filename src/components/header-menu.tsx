@@ -3,10 +3,8 @@ import Call from "../vectors/call.svg"
 import {Link, useNavigate} from "react-router-dom";
 
 const HeaderMenu = () => {
-    const navigate = useNavigate();
-
     return (<>
-            <ul className="menu-tabs typo-style">
+            <ul className="menu-tabs">
                 <Link to="/" className="menu-item">
                     <li>Главная</li>
                 </Link>
@@ -31,14 +29,18 @@ const HeaderMenu = () => {
                 </Link>
 
                 <li>
-                    <div className="call-button" onClick={() => navigate("/contacts")}>
-                        <img src={Call} alt=""/> Позвоните нам!
-                    </div>
+                    <a href="tel:+79270771900">
+                        <div className="call-button">
+                            <img src={Call} alt=""/> Позвоните&nbsp;нам!
+                        </div>
+                    </a>
                 </li>
             </ul>
-            <div className="invisible" onClick={() => navigate("/contacts")}>
-                <img src={Call} alt=""/> Позвоните&nbsp;нам!
-            </div>
+            <a href="tel:+79270771900">
+                <div className="invisible">
+                    <img src={Call} alt=""/> Позвоните&nbsp;нам!
+                </div>
+            </a>
         </>
     )
 }

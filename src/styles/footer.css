@@ -22,6 +22,15 @@
     gap: 40px;
 }
 
+.first-text-block a {
+    text-decoration: none;
+    color: #C0C0C0;
+}
+
+.first-text-block a:visited {
+    color: #C0C0C0;
+}
+
 .first-text-block img {
     width: 300px;
 }
@@ -104,12 +113,12 @@
 
 @media (max-width: 900px) {
     .first-text-block img {
-        width: 190px;
+        width: 200px;
     }
 
     .footer-screen {
         display: flex;
-        padding: 64px 80px;
+        padding: 4vh 6vw;
         justify-content: space-between;
         align-items: flex-start;
         align-self: stretch;
@@ -128,5 +137,7 @@
     .footer-screen .first-text-block {
         gap: 14px;
     }
+
+
 
 }

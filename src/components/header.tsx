@@ -4,7 +4,7 @@ import HeaderMenu from "./header-menu";
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    return (<div className="wrapper color-style">
+    return (<div className="wrapper">
         <Link to="/"><img src={Logo} alt="RZClinic" className="logo-header" /></Link>
         <HeaderMenu/>
         </div>)

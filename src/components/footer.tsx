@@ -12,6 +12,7 @@ export const Footer = () => {
         <div className="footer-screen">
             <div className="first-text-block">
                 <img src={LogoImage2} className="text-main-block" alt=""/>
+                <a href="https://t.me/darriyano" target="_blank">Web-site by Darriyano</a>
             </div>
 
             <div className="second-text-block">

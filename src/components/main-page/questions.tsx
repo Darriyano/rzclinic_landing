@@ -14,7 +14,8 @@ export const Questions = () => {
                     <summary className="texts-questions">Как записаться на прием?</summary>
                     <p onClick={() => {
                         navigate("/contacts")
-                    }}>Вы можете записаться через наш сайт или по телефону в разделе <b><i>контакты</i></b></p>
+                    }} style={{cursor: "pointer"}}>Вы можете записаться через наш сайт или по телефону в
+                        разделе <b><i>контакты</i></b></p>
                 </details>
 
                 <details className="textframe">
@@ -32,7 +33,8 @@ export const Questions = () => {
                     <summary className="texts-questions">Как до вас добраться?</summary>
                     <p onClick={() => {
                         navigate("/contacts")
-                    }}>Наш точный адрес, метку на карте и способы связи вы можете уточнить в разделе <b><i>контакты</i></b></p>
+                    }} style={{cursor: "pointer"}}>Наш точный адрес, метку на карте и способы связи вы можете уточнить в
+                        разделе <b><i>контакты</i></b></p>
                 </details>
             </div>
 

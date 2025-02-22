@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mulish", serif;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.bg-img {
+    background-image: url("./vectors/backround.svg");
+    background-size: initial; /* Изображение не обрезается */
+    background-position: right center; /* Прижимаем вправо */
+    background-repeat: no-repeat; /* Отключаем повтор */
+}
+
+.mobile-button-back {
+    display: none;
+    color: #1b1376;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 920px) {
+    .mobile-button-back {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        text-align: left;
+        padding-left: 4vw;
+        padding-top: 6vw;
+    }
+}

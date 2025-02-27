@@ -118,7 +118,8 @@
     }
 
     .screen .div-wrapper img{
-        width: 60vw;
+        width: 600px;
+        height: fit-content;
     }
 }
 

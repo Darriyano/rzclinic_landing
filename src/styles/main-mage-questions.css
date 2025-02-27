@@ -50,10 +50,6 @@
 
 .textframe summary::after {
     content: "▶";
-    color: #660FF1;
-    font-size: 1.2em;
-    position: absolute;
-    right: 0;
     transition: transform 0.3s ease;
 }
 

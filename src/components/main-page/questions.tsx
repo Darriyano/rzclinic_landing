@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/main-mage-questions.css";
 import bg_img from "../../vectors/question-mark.svg";
 import {useNavigate} from "react-router-dom";
-import {Contactspage} from "../../pages/contactspage";
 
 export const Questions = () => {
     const navigate = useNavigate();

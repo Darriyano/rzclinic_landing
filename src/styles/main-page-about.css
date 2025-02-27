@@ -116,11 +116,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    .screen .div-wrapper img{
-        width: 600px;
-        height: fit-content;
-    }
 }
 
 @media screen and (min-width: 1921px) {

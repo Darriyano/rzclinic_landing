@@ -10,7 +10,7 @@ a:link {
 }
 
 .bg-img {
-    background-image: url("./vectors/backround.svg");
+    background-image: url("vectors/backround.svg");
     background-size: initial; /* Изображение не обрезается */
     background-position: right center; /* Прижимаем вправо */
     background-repeat: no-repeat; /* Отключаем повтор */

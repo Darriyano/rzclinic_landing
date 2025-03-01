@@ -11,7 +11,7 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 # Копируем весь код
-COPY . .
+COPY rzclinic_landing .
 
 # Запускаем сборку (командой, прописанной в "scripts.build" package.json)
 RUN yarn build

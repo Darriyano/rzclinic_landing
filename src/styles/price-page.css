@@ -68,47 +68,88 @@
 }
 
 .accordeons .block details {
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: 0;
-    align-self: stretch;
     border-bottom: 1.5px solid #9efbdd;
-    background: #d1fff3;
     width: 100%;
-    box-sizing: border-box; /* Чтобы padding не уменьшал ширину */
+    box-sizing: border-box;
+    background: none; /* убираем фон */
 }
 
-.accordeons .block summary {
-    display: flex;
+.accordeons .block details > summary {
+    background: #d1fff3; /* теперь только у заголовка */
     padding: 12px 20px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     cursor: pointer;
     font-size: 20px;
     color: #000;
     font-weight: normal;
-    list-style: none; /* Убираем стандартный маркер */
-    background: #BEF9E9; /* Можно добавить фон для удобства */
+    list-style: none; /* убрать стандартный маркер */
 }
 
+.accordeons .block details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Стрелочки можно оставить как были */
 .accordeons .block summary::after {
-    content: "▶"; /* Закрытая стрелка */
+    content: "▶";
     transition: transform 0.2s;
 }
-
 .accordeons .block details[open] summary::after {
-    content: "▼"; /* Открытая стрелка */
+    content: "▼";
 }
 
-.accordeons .block details p {
+.accordeons .block p {
     padding: 12px 20px;
     margin: 0;
-    background: #f7fffc; /* Светлее, чтобы выделить */
     color: #000;
     font-size: 16px;
     font-weight: normal;
 }
+
+
+/* 3) Фон для раскрытого контента (параграфы + кнопка) */
+.accordeons .block .details-content {
+    background: #f7fffc; /* светлый фон для внутренностей */
+    padding: 12px 20px;
+    margin: 0;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Стиль кнопки — без изменений */
+.accordeons .block details button {
+    background: linear-gradient(180deg, rgb(18, 202, 151) 0%, rgb(53, 157, 248) 100%);
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    position: relative;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 16px;
+    margin-left: 16px;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect (for desktop) */
+.accordeons .block details button:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transform: scale(1.05); /* Small zoom effect */
+}
+
+/* Active effect (for mobile tap & click) */
+.accordeons .block details button:active {
+    background: linear-gradient(90deg, #28B38C 0%, #267CC7 100%); /* Even darker gradient */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15); /* Smaller shadow */
+    transform: scale(0.97); /* Slight shrink effect */
+}
+
+
 
 @media (max-width: 800px) {
     .price-intro-screen {

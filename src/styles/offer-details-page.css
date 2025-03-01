@@ -60,6 +60,31 @@
     align-self: stretch;
 }
 
+.new-frame button {
+    background: linear-gradient(180deg, rgb(18, 202, 151) 0%, rgb(53, 157, 248) 100%);
+    border-radius: 25px;
+    color: #fff;
+    border: none;
+    position: relative;
+    justify-content: center;
+    font-size: 16px;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect (for desktop) */
+.new-frame button:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transform: scale(1.05); /* Small zoom effect */
+}
+
+/* Active effect (for mobile tap & click) */
+.new-frame button:active {
+    background: linear-gradient(90deg, #28B38C 0%, #267CC7 100%); /* Even darker gradient */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15); /* Smaller shadow */
+    transform: scale(0.97); /* Slight shrink effect */
+}
+
 .new-frame p {
     color: #000;
     font-size: 28px;
@@ -89,6 +114,10 @@
     font-weight: 600;
     line-height: 30px; /* 93.75% */
     letter-spacing: -1px;
+}
+
+.accordeons-details-2 {
+    padding-bottom: 20px;
 }
 
 
@@ -162,6 +191,11 @@
     background: #BEF9E9; /* Можно добавить фон для удобства */
 }
 
+/* Скрываем стандартный маркер в Safari / WebKit */
+.accordeons-details .block summary::-webkit-details-marker {
+    display: none;
+}
+
 .accordeons-details .block summary::after {
     content: "▶"; /* Закрытая стрелка */
     transition: transform 0.2s;
@@ -186,7 +220,7 @@
         flex-direction: column;
         position: relative;
         height: fit-content;
-        padding: 8vh 6vw 1vh 6vw;
+        padding: 1vh 6vw 1vh 6vw;
         justify-content: space-between;
         align-items: center;
         align-self: stretch;
@@ -198,7 +232,6 @@
         position: relative;
         width: fit-content;
         align-self: flex-start;
-
         color: #12CA97;
         font-style: normal;
     }
@@ -240,5 +273,12 @@
 
     .accordeons-details {
         padding: 8vh 6vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .details-intro-screen span {
+        font-size: 42px;
+        letter-spacing: -1px;
     }
 }

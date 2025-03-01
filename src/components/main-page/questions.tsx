@@ -20,11 +20,11 @@ export const Questions = () => {
                 <details className="textframe">
                     <summary className="texts-questions">Хорошие ли у вас врачи?
                     </summary>
-                    <p>У нас работают опытные врачи с аккредитацией и большим стажем работы!</p>
+                    <p>У нас работают опытные врачи с большим стажем работы!</p>
                 </details>
 
                 <details className="textframe">
-                    <summary className="texts-questions">Долго ли делается процедура?</summary>
+                    <summary className="texts-questions">Долго ли проводится процедура?</summary>
                     <p>Длительность процедуры зависит от ее сложности, в среднем от 30 минут до 2 часов</p>
                 </details>
 
@@ -40,7 +40,7 @@ export const Questions = () => {
             <div className="question-texts-container">
                 <div className="info">
                     <div className="main-heading">Частые вопросы</div>
-                    <p className="main-secondary">А вдруг ваш вопрос уже спрашивали?</p>
+                    <p className="main-secondary">А вдруг ваш вопрос уже задавали?</p>
                 </div>
                 <button className="button-answer" onClick={() => {
                     navigate("/contacts")

@@ -5,8 +5,12 @@ import {arr} from "../components/prices_array";
 import {capitalize} from "../components/capitalisation";
 import {useEffect} from "react";
 import {MobileButtonBack} from "../components/mobile-button-back";
+import {useNavigate} from "react-router-dom";
+
 
 export const PricePage = () => {
+    const navigate = useNavigate();
+
     useEffect(() => {
         window.scrollTo(0, 0); // Прокрутка наверх
     }, []);
@@ -32,10 +36,14 @@ export const PricePage = () => {
                                 {subsection.items.map((item, itemIndex) => (
                                     <details key={itemIndex}>
                                         <summary>{capitalize(item.name)}</summary>
-                                        <p>{capitalize(item.description)}</p>
-                                        <p>Цена: {item.price} руб.</p>
-                                        <p>Время: {item.time}</p>
+                                        <div className="details-content">
+                                            <p>{capitalize(item.description)}</p>
+                                            <p><b>Цена: {item.price} руб.</b></p>
+                                            <p>Время: {item.time}</p>
+                                            <button onClick={() => navigate("/contacts")}>Записаться →</button>
+                                        </div>
                                     </details>
+
                                 ))}
                             </div>
                         ))}

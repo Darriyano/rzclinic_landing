@@ -120,7 +120,7 @@
 }
 
 .screen-doctors .div-wrapper .doctor-image {
-    width: 400px;
+    width: 500px;
     z-index: -1;
 }
 
@@ -137,8 +137,8 @@
 
 @media (max-width: 800px) {
     .green-circle {
-        width: 280px;
-        height: 280px;
+        width: 240px;
+        height: 240px;
         right: 10vw; /* Смещение за границу */
         bottom: 8vw;
     }
@@ -216,6 +216,7 @@
     .screen-doctors {
         padding: 32px 16vw;
     }
+
 
     .screen-doctors .div-wrapper .doctor-image {
         width: 600px;

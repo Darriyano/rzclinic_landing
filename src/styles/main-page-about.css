@@ -36,7 +36,7 @@
     letter-spacing: -1.00px;
     line-height: 30px;
     position: relative;
-    width: 525px;
+    width: 700px;
 }
 
 .screen .div-wrapper {
@@ -45,8 +45,9 @@
 
 .screen .div-wrapper img {
     position: relative;
-    width: 350px;
-    height: fit-content;
+    width: 300px;
+    height: 420px;
+    margin-right: 40px;
     box-shadow: 0 0 1px #00000040;
     border-radius: 25px;
 }

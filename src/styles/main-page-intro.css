@@ -79,6 +79,11 @@
     flex: 1 0 0;
 }
 
+
+.main-image-frame img {
+    width: 400px;
+}
+
 @media (max-width: 1250px) and (min-width: 800px) {
     .main-text {
         font-size: 52px;
@@ -86,7 +91,7 @@
     }
 
     .intro .main-image-frame img {
-        width: fit-content;
+        width: 300px;
     }
 
     .intro-button {

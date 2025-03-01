@@ -18,7 +18,7 @@ export const Footer = () => {
             <div className="second-text-block">
                 <p>Связаться с нами:</p>
                 <ul>
-                    <li><img src={Call} alt=""/> +7 (927) 077-19-00
+                    <li><img src={Call} alt=""/> +7&nbsp;(927)&nbsp;077-19-00
                     </li>
                     <li><img src={Mail} alt=""/> r.z.clinic@mail.ru</li>
                     <li><img src={Alias} alt=""/> @rz_clinic30</li>

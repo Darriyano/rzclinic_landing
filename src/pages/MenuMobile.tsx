@@ -33,6 +33,10 @@ export const MenuMobile: React.FC<MenuMobileProps> = ({onClose}) => {
                     onClose()
                 }}>Цены</p>
                 <p onClick={() => {
+                    navigate("/form");
+                    onClose()
+                }}>Запись</p>
+                <p onClick={() => {
                     navigate("/contacts");
                     onClose()
                 }}>Контакты</p>

@@ -9,10 +9,10 @@ export const Intro = () => {
         <div className="intro bg-img">
             <div className="intro-text-wrapper">
                 <div className="gaps">
-                    <div className="main-text">Мы создаем улыбки, которые меняют жизни людей!</div>
+                    <h1 className="main-text">Мы создаем улыбки, которые меняют жизни людей!</h1>
                     <div className="secondary-text"> Это реальность!</div>
                 </div>
-                <button className="intro-button" onClick={() => navigate("/contacts")}>
+                <button className="intro-button" onClick={() => navigate("/form")}>
                     Записаться на&nbsp;прием
                 </button>
             </div>

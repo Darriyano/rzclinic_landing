@@ -1,0 +1,124 @@
+/* Контейнер формы */
+.form-intro-screen {
+    display: flex;
+    padding: 64px 120px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 52px;
+}
+
+/* Форма записи - увеличена ширина */
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px; /* Увеличенная ширина формы */
+    background: #fff;
+    padding: 40px;
+    border-radius: 25px;
+    /*box-shadow: 0px 0px 15px rgba(150, 150, 150, 0.25);*/
+}
+
+/* Заголовок формы */
+.form-heading {
+    font-size: 30px;
+    font-weight: bold;
+    color: #660FF1;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Группа полей */
+.appointment-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Лейблы */
+.appointment-form label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #1b1376;
+}
+
+/* Инпуты и textarea */
+.appointment-form input,
+.appointment-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Фиксированный textarea */
+.fixed-textarea {
+    resize: none;
+    height: 120px; /* Фиксированная высота */
+}
+
+/* Фокус на полях ввода */
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+    outline: none;
+    border-color: #31e3b0;
+    box-shadow: 0 0 5px rgba(49, 227, 176, 0.5);
+}
+
+/* Сообщения об ошибках */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Кнопка отправки, основанная на intro-button */
+.intro-button {
+    border-radius: 25px;
+    padding: 15px 40px;
+    border: none;
+    background: linear-gradient(90deg, #31e3b0 0%, #359bfa 100%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: normal;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* Анимация пульсации для кнопки */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 800px) {
+    .form-heading {
+        font-size: 24px;
+    }
+
+    .form-intro-screen {
+        align-items: flex-start;
+        flex-direction: column;
+        height: fit-content;
+        padding: 4vh 0.5vw 0 0.5vw;
+        position: relative;
+    }
+}
+
+@media (max-width: 800px) {
+    .form-heading {
+        font-size: 24px;
+    }
+}

@@ -1,6 +1,12 @@
+/* Глобальный сброс */
+* {
+    box-sizing: border-box;
+}
+
+/* Основные стили */
 .doctors-intro-screen {
     display: flex;
-    padding: 80px;
+    padding: 64px 120px;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -10,11 +16,13 @@
     color: #660ff1;
     font-size: 60px;
     font-weight: bold;
-    letter-spacing: -5.0px;
+    letter-spacing: -5px;
     line-height: 90px;
     position: relative;
-    white-space: nowrap;
+    /* Убрано white-space: nowrap для переноса текста при увеличении шрифта */
     width: fit-content;
+    text-align: left;
+    overflow-wrap: break-word;
 }
 
 .doctors-intro-screen .main-texts2 {
@@ -24,68 +32,31 @@
 .doctors-intro-screen .secondary {
     width: 525px;
     color: #1b1376;
-    text-align: right;
     font-size: 20px;
     font-style: normal;
+    overflow-wrap: break-word;
+
+    text-align: justify;
 }
 
 .all-doctors-wrapper {
+    padding: 64px 120px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    grid-template-columns: repeat(2, 1fr);
     position: relative;
-    height: fit-content;
-    justify-items: center;
-    align-items: center;
-    padding-bottom: 80px;
-    gap: 32px;
+    gap: 40px;
 }
 
-.all-doctors-wrapper .doctor-card {
-    align-items: flex-start;
-    box-shadow: 0px 0px 15px 0px rgba(150, 150, 150, 0.25);
-
-    /*background-color: #54C391;*/
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px 20px;
-    position: relative;
-    width: 30vw;
-    height: 40vw;
+/* Выравнивание карточек */
+.all-doctors-wrapper > :nth-child(2n-1) {
+    justify-self: start;
 }
 
-.doctor-card div {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Центрирование по горизонтали */
-    align-items: center; /* Центрирование по вертикали */
+.all-doctors-wrapper > :nth-child(2n) {
+    justify-self: end;
 }
 
-.doctor-card img {
-    width: 10vw;
-    border-radius: 15px;
-    margin-bottom: 12px;
-}
-
-.doctor-card p {
-    font-size: 24px;
-    color: #660ff1;
-    font-weight: bold;
-}
-
-.doctor-card span {
-    margin-top: 8px;
-    font-size: 20px;
-}
-
-@media (max-width: 1450px) and (min-width: 1250px) {
-    .all-doctors-wrapper .doctor-card {
-        width: 30vw;
-        height: 40vw;
-    }
-}
 
 
 @media (max-width: 1250px) and (min-width: 800px) {
@@ -94,66 +65,73 @@
         gap: 32px;
     }
 
+    .doctors-intro-screen .textframe {
+        line-height: 60px;
+    }
+
     .doctors-intro-screen .secondary {
-        text-align: justify;
+        text-align: right;
+        width: 100%;
+    }
+
+    .all-doctors-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+
+    .all-doctors-wrapper > :nth-child(2n-1),
+    .all-doctors-wrapper > :nth-child(2n) {
+        justify-self: center;
     }
 
     .all-doctors-wrapper .doctor-card {
-        width: 50vw;
-        height: 40vw;
+        width: 484px;
+        height: auto;
     }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 800px) {
     .all-doctors-wrapper {
-        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
-    }
-
-    .doctors-intro-screen {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
+        grid-template-columns: 1fr;
+        justify-items: center;
         padding: 4vh 6vw;
-        position: relative;
+    }
+    .doctors-intro-screen {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 4vh 6vw;
         width: 100%;
     }
 
     .doctors-intro-screen .textframe {
         font-size: 52px;
-        letter-spacing: -1.0px;
+        line-height: 100px;
+        letter-spacing: -1px;
+        text-align: left;
     }
 
     .doctors-intro-screen .secondary {
         width: 100%;
-        text-align: justify;
     }
-
-    .doctor-card div {
-        width: 100%;
-        display: flex;
-        justify-content: center; /* Центрирование по горизонтали */
-        align-items: center; /* Центрирование по вертикали */
-    }
-
-    .doctor-card div img {
-        align-self: center;
+    .doctor-card {
         width: 40vw;
-        border-radius: 15px;
+        height: auto;
+    }
+    .doctor-card div img {
+        width: 40vw;
         margin-bottom: 20px;
     }
-
     .doctor-card p {
         font-size: 28px;
     }
-
     .doctor-card span {
         margin-top: 12px;
     }
 
-    .all-doctors-wrapper .doctor-card {
-        width: 90vw;
-        height: fit-content;
+    .all-doctors-wrapper > :nth-child(2n-1),
+    .all-doctors-wrapper > :nth-child(2n) {
+        justify-self: center;
     }
 }
 
@@ -161,7 +139,37 @@
     .doctors-intro-screen {
         padding-top: 0;
     }
+
+    .all-doctors-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        padding: 4vh 6vw;
+    }
+
+    /* Все карточки по центру */
+    .all-doctors-wrapper > * {
+        justify-self: center;
+    }
+
+
+
+    .all-doctors-wrapper > :nth-child(2n-1),
+    .all-doctors-wrapper > :nth-child(2n) {
+        justify-self: center;
+    }
 }
 
+/* Для очень больших экранов */
+@media (min-width: 1921px) {
+    .all-doctors-wrapper {
+        padding: 4vh 16vw;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
 
+    .doctors-intro-screen {
+        padding: 4vh 16vw;
+        height: fit-content;
+    }
+}
 

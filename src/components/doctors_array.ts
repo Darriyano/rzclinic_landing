@@ -1,11 +1,11 @@
-import image1 from "../images-doctors/mirza.jpg";
-import image2 from "../images-doctors/mahmood.jpg";
+import image1 from "../images-doctors/mirza.jpeg";
+import image2 from "../images-doctors/mahmood.jpeg";
 import image3 from "../images-doctors/murad.jpg";
 import image4 from "../images-doctors/murtazali.jpg";
-import image5 from "../images-doctors/zulfia.jpg";
-import image6 from "../images-doctors/amira.jpg";
-import image7 from "../images-doctors/marat.jpg";
-import image8 from "../images-doctors/ainura.jpg";
+import image5 from "../images-doctors/zulfia.jpeg";
+import image6 from "../images-doctors/amira.jpeg";
+import image7 from "../images-doctors/mirza.jpeg";
+import image8 from "../images-doctors/ainura.jpeg";
 
 
 export const doctors = [

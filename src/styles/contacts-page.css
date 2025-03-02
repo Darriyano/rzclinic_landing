@@ -138,3 +138,14 @@
         padding-top: 0;
     }
 }
+
+/* Для очень больших экранов */
+@media screen and (min-width: 1921px) {
+    .contacts-intro-screen {
+        padding: 4vh 16vw;
+    }
+
+    .contacts-next {
+        padding: 4vh 16vw;
+    }
+}

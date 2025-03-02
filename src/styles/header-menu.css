@@ -157,7 +157,7 @@
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
     .wrapper {
         overflow: hidden;
         padding: 10px 10px; /* меняем с 10px 80px */
@@ -169,5 +169,14 @@
 
     .mobile-block {
         gap: 10px
+    }
+
+
+    .invisible {
+        width: 150px;
+        height: 45px;
+        font-size: 12px;
+        transition: all 0.3s ease; /* Smooth transition */
+        margin-right: 20px;
     }
 }

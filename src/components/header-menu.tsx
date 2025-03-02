@@ -16,6 +16,7 @@ const HeaderMenu = () => {
                 <Link to="/offering" className="menu-item"><li>Услуги</li></Link>
                 <Link to="/doctors" className="menu-item"><li>Врачи</li></Link>
                 <Link to="/price" className="menu-item"><li>Цены</li></Link>
+                <Link to="/form" className="menu-item"><li>Запись</li></Link>
                 <Link to="/contacts" className="menu-item"><li>Контакты</li></Link>
 
                 <li>

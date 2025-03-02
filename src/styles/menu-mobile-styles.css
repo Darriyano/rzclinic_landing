@@ -52,6 +52,8 @@
         font-weight: 500;
         transition: transform 0.2s ease;
         border-bottom: 1px solid white;
+
+        cursor: pointer;
     }
 
     .menu-item:hover {

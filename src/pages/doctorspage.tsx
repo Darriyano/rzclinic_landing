@@ -3,8 +3,8 @@ import "../styles/doctors-page-styles.css"
 import {Footer} from "../components/footer";
 import {doctors} from "../components/doctors_array"
 import {useEffect} from "react";
-import {capitalize} from "../components/capitalisation";
 import {MobileButtonBack} from "../components/mobile-button-back";
+import DoctorCard from "../components/doctor-card";
 
 export const DoctorsPage = () => {
     useEffect(() => {
@@ -29,15 +29,15 @@ export const DoctorsPage = () => {
 
         <div className="all-doctors-wrapper">
             {doctors.map((doctor) => (
-                <div className="doctor-card">
-                    <div><img src={doctor.image} alt=""/></div>
-
-                    <p>{doctor.name}</p>
-                    <span>{capitalize(doctor.position)}</span>
-                    <span><b>Образование: </b>{doctor.education}</span>
-                    <span><b>Специализация: </b>{doctor.work_area}</span>
-                    <span> <b>Опыт работы: </b>{doctor.experience}</span>
-                </div>))}
+                <DoctorCard
+                    image={doctor.image}
+                    name={doctor.name}
+                    position={doctor.position}
+                    education={doctor.education}
+                    work_area={doctor.work_area}
+                    experience={doctor.experience}
+                />
+            ))}
 
         </div>
 

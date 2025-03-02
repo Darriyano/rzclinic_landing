@@ -5,6 +5,7 @@ import {PricePage} from "./pricepage";
 import {Contactspage} from "./contactspage";
 import {OfferDetails} from "./offersdetailspage";
 import {DoctorsPage} from "./doctorspage";
+import AppointmentForm from "./form";
 
 export const Routing = () => {
     return (<Routes>
@@ -14,5 +15,6 @@ export const Routing = () => {
         <Route path="/contacts" element={<Contactspage/>}/>
         <Route path="/offer-details/:id" element={<OfferDetails/>}/>
         <Route path="/doctors" element={<DoctorsPage/>}/>
+        <Route path="/form" element={<AppointmentForm/>}/>
     </Routes>)
 }

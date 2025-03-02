@@ -62,7 +62,7 @@ export const OfferDetails = () => {
                 <p>Когда нужна {subarray_offers.title}?</p>
                 <span>{subarray_offers.whenNeeded}</span>
                 <button className="button-answer" onClick={() => {
-                    navigate("/contacts")
+                    navigate("/form")
                 }}>Записаться →
                 </button>
             </div>
@@ -84,7 +84,6 @@ export const OfferDetails = () => {
                     ))}
                 </div>
             ) : (<div className="accordeons-details-2">
-                {/*<button onClick={() => navigate("/contacts")}>Уточнить цены на услуги</button>*/}
             </div>)}
 
             <Footer/>

@@ -39,9 +39,13 @@ export const Footer = () => {
                     <Link to="/doctors">
                         <li>Врачи</li>
                     </Link>
-                    {/*<li>Наши работы</li>*/}
+
                     <Link to="/price">
                         <li>Цены</li>
+                    </Link>
+
+                    <Link to="/contacts">
+                        <li>Запись</li>
                     </Link>
 
                     <Link to="/contacts">

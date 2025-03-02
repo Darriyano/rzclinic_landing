@@ -24,6 +24,21 @@
     background-color: #12ca97;
     border-radius: 50%;
     z-index: -2; /* уходит в фон */
+    transition: transform 0.3s ease;
+    pointer-events: auto; /* Убедимся, что элемент получает события */
+}
+
+
+.green-circle:hover {
+    animation: greenCircleMove 1.5s ease infinite alternate;
+}
+
+@keyframes greenCircleMove {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(-10px, -10px); }
+    50%  { transform: translate(10px, -10px); }
+    75%  { transform: translate(10px, 10px); }
+    100% { transform: translate(-10px, 10px); }
 }
 
 /* Левая колонка (текст/кнопка) */
@@ -75,6 +90,7 @@
     color: #12ca97;
     letter-spacing: -1.8px;
 }
+
 .screen-doctors .text-wrapper-2 {
     color: #660ff1;
     letter-spacing: -1.8px;
@@ -98,6 +114,7 @@
    можно сделать так, а не жёсткий width: 50vw */
 .screen-doctors .text-wrapper-3 {
     max-width: 50vw;
+    text-align: justify;
 }
 
 /* Кнопка «Подробнее о врачах» */
@@ -144,8 +161,9 @@
 /* Изображение врача */
 .screen-doctors .div-wrapper .doctor-image {
     width: 500px;
-    z-index: -1; /* под текстом */
+    z-index: -1;
 }
+
 
 /* ================== MEDIA QUERIES ================== */
 

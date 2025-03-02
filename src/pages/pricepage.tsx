@@ -40,7 +40,7 @@ export const PricePage = () => {
                                             <p>{capitalize(item.description)}</p>
                                             <p><b>Цена: {item.price} руб.</b></p>
                                             <p>Время: {item.time}</p>
-                                            <button onClick={() => navigate("/contacts")}>Записаться →</button>
+                                            <button onClick={() => navigate("/form")}>Записаться →</button>
                                         </div>
                                     </details>
 

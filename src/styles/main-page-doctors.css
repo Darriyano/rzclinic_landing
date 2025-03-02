@@ -257,13 +257,22 @@
 }
 
 /* ~~~~~ Большие экраны (4K и выше) ~~~~~ */
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1920px) {
     .screen-doctors {
         padding: 32px 16vw;
+    }
+
+    .screen-doctors p {
+        font-size: 26px;
     }
 
     .screen-doctors .div-wrapper .doctor-image {
         width: 600px;
         margin-right: 10vw;
+    }
+
+    .green-circle {
+        right: 20vw;
+        bottom: 8vw;
     }
 }

@@ -16,10 +16,10 @@
        - min-height: 80vh;  (растягивается при необходимости)
        - или уберите вовсе, если не нужно ограничение
     */
-    min-height: 80vh;
+    min-height: 60vh;
 
     /* Оставьте, если действительно нужно «обрезать» фоновые элементы */
-     overflow: hidden;
+    overflow: hidden;
 }
 
 /* Вопросы/аккордеоны */
@@ -125,11 +125,13 @@
     line-height: normal;
     transition: all 0.3s ease;
 }
+
 .questions-screen .button-answer:hover {
     cursor: pointer;
     transform: scale(1.03);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
 }
+
 .questions-screen .button-answer:active {
     transform: scale(0.97);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.09);
@@ -155,6 +157,7 @@
         padding: 4vh 6vw;
         /* Если хотим, чтобы высота «подстраивалась» */
         min-height: auto;
+
     }
 
     .questions-screen .button-answer {
@@ -233,5 +236,59 @@
     }
 }
 
-/* При очень больших экранах (например, 1920px+)
-   можно ещё добавить медиазапросы, если нужно */
+@media screen and (min-width: 1920px) {
+    .questions-screen {
+        padding: 0px 16vw;
+    }
+
+    .questions-screen .textframe p {
+        font-size: 24px;
+    }
+
+    /* Суммари (верхняя часть details) */
+    .textframe summary {
+        font-size: 32px;
+    }
+
+    .questions-screen .button-answer {
+        padding: 1vh 3vw;
+        border-radius: 2vh;
+        font-size: 24px;
+    }
+
+    .questions-screen .info {
+        width: 20vw;
+        gap: 2vh;
+    }
+
+    .questions-screen .main-heading {
+        font-size: 52px;
+        line-height: 1.1em;
+        letter-spacing: -3px;
+    }
+
+    .questions-screen .main-secondary {
+        text-align: left;
+    }
+
+    .questions-screen .main-heading {
+        font-size: 60px;
+        line-height: 1em;
+        letter-spacing: -1px;
+    }
+
+    .questions-screen .main-secondary {
+        font-size: 26px;
+    }
+
+    .questions-screen .button-answer {
+        font-size: 32px;
+        line-height: 1em;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .questions-screen {
+        min-height: 50vh;
+    }
+}

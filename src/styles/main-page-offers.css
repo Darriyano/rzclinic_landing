@@ -100,7 +100,7 @@
     font-weight: 500;
     letter-spacing: -1px;
     line-height: 30px;
-    text-align: right;
+    text-align: justify;
     width: 525px;
     position: relative;
 }
@@ -233,7 +233,7 @@
 }
 
 /* --- От 1921px и выше --- */
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1920px) {
     .offers-screen {
         padding: 32px 16vw;
         height: fit-content;
@@ -245,7 +245,7 @@
 
     .offers-screen .text-wrapper-3 {
         font-size: 26px;
-        width: 35vw;
+        width: 30vw;
     }
 }
 

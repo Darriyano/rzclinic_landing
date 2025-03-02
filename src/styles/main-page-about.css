@@ -1,19 +1,23 @@
 .screen {
-    align-items: center;
+    /* Задаём полную ширину и нужные отступы */
+    width: 100%;
+    padding: 10px 80px;
+
+    /* Горизонтальная компоновка + выравнивание */
     display: flex;
     flex-direction: row;
-    height: fit-content;
     justify-content: space-between;
-    padding: 32px 80px;
+    align-items: center;
+
     position: relative;
+    height: fit-content; /* Можно и auto */
 }
 
 .screen .frame {
-    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     justify-content: center;
+    gap: 16px;
     position: relative;
 }
 
@@ -21,33 +25,37 @@
     color: #660ff1;
     font-size: 60px;
     font-weight: 700;
-    letter-spacing: -3.00px;
+    letter-spacing: -3px;
     line-height: 90px;
-    margin-top: -1.00px;
+    margin-top: -1px;
     position: relative;
     white-space: nowrap;
     width: fit-content;
 }
 
+/* Убираем width: 100%, чтобы текст не растягивался и не перекрывал картинку */
 .screen .div {
     color: #1b1376;
     font-size: 20px;
     font-weight: 500;
-    letter-spacing: -1.00px;
+    letter-spacing: -1px;
     line-height: 30px;
     position: relative;
-    width: 700px;
+    text-align: justify;
+
+    /* Можно задать примерную максимальную ширину для текста: */
+    max-width: 600px; /* или по вкусу */
 }
 
 .screen .div-wrapper {
     display: flex;
 }
 
+/* Стили картинки */
 .screen .div-wrapper img {
     position: relative;
     width: 300px;
     height: 420px;
-    margin-right: 40px;
     box-shadow: 0 0 1px #00000040;
     border-radius: 25px;
 }
@@ -63,65 +71,57 @@
     width: fit-content;
 }
 
+
+/* ================== MEDIA QUERIES ================== */
+
 @media (max-width: 1250px) and (min-width: 800px) {
     .screen {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
+        flex-direction: column;  /* вместо row */
+        align-items: flex-start; /* вместо center */
         gap: 32px;
-        padding: 4vh 6vw;
-        position: relative;
+        padding: 4vh 6vw;        /* сужаем отступы */
     }
 
+    /* На планшетах текст можно растягивать на всю ширину */
     .frame .div {
-       width: 100%;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 800px) {
     .screen {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
+        flex-direction: column;  /* вместо row */
+        align-items: flex-start; /* вместо center */
         gap: 52px;
-        padding: 4vh 6vw;
-        position: relative;
+        padding: 40px 40px; /* меняем с 10px 80px */
     }
 
     .screen .text-wrapper {
-        color: #660ff1;
-        font-size: 40px;
-        font-weight: 700;
-        letter-spacing: -3.00px;
-        line-height: 90px;
-        margin-top: -1.00px;
-        position: relative;
-        white-space: nowrap;
+        font-size: 40px;  /* уменьшаем заголовок */
     }
 
+    /* На мобильных текст растягиваем на всю ширину */
     .screen .div {
-        color: #1b1376;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: -1.00px;
-        line-height: 30px;
-        position: relative;
-        text-align: justify;
         width: 100%;
+        max-width: 100%;
     }
 
-    .screen .div-wrapper{
+    .screen .div-wrapper {
         width: 100%;
         align-items: center;
         justify-content: center;
+    }
+
+    .screen .div-wrapper img {
+        align-self: center;
+        margin: 0;
     }
 }
 
 @media screen and (min-width: 1921px) {
     .screen {
-        padding: 32px 16vw;
+        padding: 32px 16vw;  /* увеличиваем отступы на больших экранах */
     }
 
     .screen .text-wrapper {
@@ -129,13 +129,8 @@
     }
 
     .screen .div {
-        color: #1b1376;
         font-size: 26px;
-        font-weight: 500;
-        letter-spacing: -1.00px;
-        line-height: 30px;
-        position: relative;
-        width: 50vw;
+        width: 50vw;         /* если хотите занимать половину экрана */
         text-align: justify;
     }
 }

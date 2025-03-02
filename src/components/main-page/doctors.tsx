@@ -28,7 +28,7 @@ export const Doctors = () => {
                 <div className="button-container">
                     <button className="button-all" onClick={() => {
                         navigate("/doctors")
-                    }}>Подробнее о врачах
+                    }}>Наши врачи →
                     </button>
                 </div>
             </div>

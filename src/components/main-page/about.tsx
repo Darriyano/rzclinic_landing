@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/main-page-about.css";
 import Image from "../../images-doctors/clinic.jpeg"
 
+
 export const About = () => {
     return (
         <div className="screen">
@@ -15,7 +16,9 @@ export const About = () => {
                 </p>
             </div>
 
-            <div className="div-wrapper"><img src={Image} alt=""/></div>
+            <div className="div-wrapper">
+                <img src={Image} alt="" />
+            </div>
         </div>
     );
 };

@@ -1,35 +1,49 @@
 .questions-screen {
     display: flex;
     flex-direction: row;
-    gap: 6.2vw; /* Пропорциональный отступ */
     align-items: center;
+    justify-content: space-between;
+
+    /* Базовые отступы и размеры */
+    padding: 10px 80px;
+    gap: 6.2vw;
     background-color: #12ca97;
-    justify-content: flex-end;
-    padding: 1vh 5vw;
     position: relative;
     width: 100%;
-    height: 80vh; /* Относительная высота */
-    overflow: hidden;
+
+
+    /* Вместо фиксированной высоты:
+       - min-height: 80vh;  (растягивается при необходимости)
+       - или уберите вовсе, если не нужно ограничение
+    */
+    min-height: 80vh;
+
+    /* Оставьте, если действительно нужно «обрезать» фоновые элементы */
+     overflow: hidden;
 }
 
+/* Вопросы/аккордеоны */
 .questions-screen .questions-frame {
-    align-items: flex-start;
     display: flex;
+    color: white;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     position: relative;
     gap: 2vw;
     z-index: 1;
 }
 
+/* Блок с одним вопросом/ответом */
 .questions-screen .textframe {
     display: flex;
     flex-direction: column;
-    width: 48vw;
-    gap: 1vh;
-    height: fit-content;
     justify-content: space-between;
     align-items: flex-start;
+
+    width: 48vw;
+    height: fit-content;
+    gap: 1vh;
     padding-bottom: 1vw;
     border-bottom: 0.15rem solid #FFE3E3;
 }
@@ -39,6 +53,7 @@
     font-size: 18px;
 }
 
+/* Суммари (верхняя часть details) */
 .textframe summary {
     list-style: none;
     display: flex;
@@ -47,31 +62,26 @@
     justify-content: space-between;
     cursor: pointer;
     position: relative;
+    font-size: 24px;
 }
 
-/* Скрываем стандартный маркер в Safari / WebKit */
+/* Скрываем стандартный маркер в Safari/WebKit */
 .textframe summary::-webkit-details-marker {
     display: none;
 }
 
+/* Стрелочка закрытого summary */
 .textframe summary::after {
     content: "▶";
     transition: transform 0.3s ease;
 }
 
+/* Стрелочка открытого summary */
 .textframe[open] summary::after {
     content: "▼";
 }
 
-
-.questions-screen .texts-questions {
-    color: #FFF;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.25em;
-    letter-spacing: -0.05em;
-}
-
+/* Заголовки и тексты справа */
 .questions-screen .question-texts-container {
     display: flex;
     flex-direction: column;
@@ -104,6 +114,7 @@
     letter-spacing: -0.05em;
 }
 
+/* Кнопка */
 .questions-screen .button-answer {
     padding: 1.5vh 4vw;
     border-radius: 2vh;
@@ -112,20 +123,19 @@
     color: #FFF;
     font-size: 24px;
     line-height: normal;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease;
 }
-
 .questions-screen .button-answer:hover {
     cursor: pointer;
-    transform: scale(1.03); /* Small zoom effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06); /* Stronger shadow */
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
 }
-
 .questions-screen .button-answer:active {
-    transform: scale(0.97); /* Slight shrink effect */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.09); /* Stronger shadow */
+    transform: scale(0.97);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.09);
 }
 
+/* Фоновой svg-элемент */
 .questions-screen .bg-image {
     position: absolute;
     z-index: 0;
@@ -136,38 +146,29 @@
     right: 0;
 }
 
+/* ================== MEDIA QUERIES ================== */
+
+/* ~~~~ Планшеты (от 1250px до 800px) ~~~~ */
 @media (max-width: 1250px) and (min-width: 800px) {
     .questions-screen {
-        display: flex;
-        flex-direction: row;
-        gap: 6.2vw; /* Пропорциональный отступ */
-        align-items: center;
-        background-color: #12ca97;
-        justify-content: flex-end;
+        /* Изменяем отступы, высоту */
         padding: 4vh 6vw;
-        position: relative;
-        width: 100%;
-        height: fit-content;
+        /* Если хотим, чтобы высота «подстраивалась» */
+        min-height: auto;
     }
 
     .questions-screen .button-answer {
         padding: 1vh 3vw;
         border-radius: 2vh;
-        background: #660FF1;
-        border: none;
-        color: #FFF;
         font-size: 20px;
-        line-height: normal;
     }
 
     .questions-screen .info {
-        gap: 2vh
+        gap: 2vh;
     }
 
     .questions-screen .main-heading {
-        color: #FFF;
         font-size: 52px;
-        font-weight: 700;
         line-height: 1.1em;
         letter-spacing: -3px;
     }
@@ -175,16 +176,15 @@
     .questions-screen .main-secondary {
         text-align: left;
     }
-
 }
 
+/* ~~~~ Мобильные (до 800px) ~~~~ */
 @media (max-width: 800px) {
     .questions-screen {
         flex-direction: column-reverse;
         gap: 8vh;
-        height: fit-content;
-        padding: 4vh 6vw;
-
+        padding: 40px 40px; /* меняем с 10px 80px */
+        min-height: auto; /* пусть растягивается */
         overflow-x: hidden;
     }
 
@@ -197,46 +197,41 @@
         width: 100%;
     }
 
+    .questions-screen .textframe summary {
+        font-size: 16px;
+    }
+
     .questions-screen .question-texts-container {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: flex-start;
         width: 100%;
         gap: 3vh;
-        z-index: 1;
     }
 
     .question-texts-container .info {
         width: 100%;
         align-items: flex-start;
+        gap: 2vh;
     }
 
     .questions-screen .main-heading {
-        color: #FFF;
         font-size: 40px;
-        font-weight: 700;
         line-height: 1em;
         letter-spacing: -1px;
-
     }
 
     .questions-screen .main-secondary {
-        color: #FFF;
         text-align: left;
         font-size: 24px;
-        font-weight: normal;
         line-height: 1.25em;
     }
 
     .questions-screen .button-answer {
         padding: 1.5vh 4vw;
         border-radius: 25px;
-        background: #660FF1;
-        border: none;
-        color: #FFF;
         font-size: 16px;
-        line-height: normal;
     }
 }
 
+/* При очень больших экранах (например, 1920px+)
+   можно ещё добавить медиазапросы, если нужно */

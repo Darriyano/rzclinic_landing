@@ -1,121 +1,125 @@
 .offers-screen {
-    align-items: center;
+    /* Базовые стили для десктопа/широких экранов */
     display: flex;
     flex-direction: row;
-    height: 682px;
-    padding: 10px 80px;
-    position: relative;
-    align-self: stretch;
     justify-content: space-between;
+    align-items: center;
 
+    /* Вы можете сделать height: auto, но если нужна фикс. высота, оставьте: */
+    height: auto;
+
+    padding: 10px 80px;
+    margin: 0;
     overflow-x: hidden;
+    align-self: stretch;
+    position: relative;
+    width: 100%;
 }
 
 .offers-screen .info-wrapper {
-    align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 64px;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
+    width: 100%;
+    margin: 0; /* можно убрать, если default и так 0 */
 }
 
+/* Кнопки переключения */
 .offers-screen .round-button {
-    align-items: center;
-    background-color: #660ff1;
-    border-radius: var(--responsive-button-border-radius);
-    border: none;
     display: flex;
-    height: 44px;
     justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: #660ff1;
+    border: none;
+    border-radius: var(--responsive-button-border-radius);
     position: relative;
     transform: rotate(180deg);
-    width: 44px;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Наведение */
+}
+.offers-screen .round-button:hover {
+    transform: rotate(180deg) scale(1.07); /* Небольшое увеличение при ховере */
+}
+.offers-screen .vector {
+    width: 13px;
+    height: 17px;
+    position: relative;
+    transform: rotate(-180deg);
 }
 
+/* Вторая «мобильная» кнопка по умолчанию скрыта */
 .offers-screen .round-button2 {
     display: none;
 }
 
+/* Ссылка по умолчанию тоже скрыта */
 .offer-link {
     display: none;
 }
 
-.offers-screen .round-button:hover {
-    cursor: pointer;
-}
-
-.offers-screen .vector {
-    height: 17px;
-    position: relative;
-    transform: rotate(-180deg);
-    width: 13px;
-}
-
+/* Обёртка текста (справа) */
 .offers-screen .info-text-wrapper {
-    align-items: flex-end;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 16px;
+    width: fit-content; /* чтобы не растягивалось */
     position: relative;
-    width: fit-content;
 }
 
 .offers-screen .offer-main-text {
-    color: transparent;
-    font-size: 60px;
-    font-weight: 700;
-    letter-spacing: -3.00px;
-    line-height: 90px;
-    margin-top: -1.00px;
-    position: relative;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 16px;
+
+    /* Текстовые настройки */
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    line-height: 90px;
+    margin-top: -1px;
+    color: transparent; /* Градиент? Или заливка через span'ы */
 }
 
 .offers-screen span {
-    color: #12ca97;
-    letter-spacing: -1.80px;
+    color: #12ca97;            /* "Наши" */
+    letter-spacing: -1.8px;
 }
-
 .offers-screen .text-wrapper-2 {
-    color: #660ff1;
-    letter-spacing: -1.80px;
+    color: #660ff1;            /* "услуги" */
 }
 
 .offers-screen .text-wrapper-3 {
     color: #1b1376;
     font-size: 20px;
     font-weight: 500;
-    letter-spacing: -1.00px;
+    letter-spacing: -1px;
     line-height: 30px;
-    position: relative;
     text-align: right;
     width: 525px;
+    position: relative;
 }
 
-:root {
-    --responsive-button-border-radius: var(--responsive-size-24);
-    --responsive-size-24: 24px;
-}
+/* ================== MEDIA QUERIES ================== */
 
+/* --- От 1450 до 1250px --- */
 @media (max-width: 1450px) and (min-width: 1250px) {
     .offers-screen {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        width: 100vw; /* если нужно тянуть на всю ширину viewport */
         padding: 4vh 6vw;
-        position: relative;
-        height: fit-content;
-        width: 100vw;
+        height: fit-content; /* чтобы «раскрывалось» по контенту */
+        align-items: flex-start;   /* вместо center */
     }
+
     .offers-screen .info-text-wrapper {
-        padding: 4vh 0vw;
+        padding: 4vh 0;
         width: 24vw;
         align-items: flex-end;
-        position: relative;
     }
 
     .offers-screen .text-wrapper-3 {
@@ -124,117 +128,73 @@
     }
 }
 
+/* --- От 1250px до 800px --- */
 @media (max-width: 1250px) and (min-width: 800px) {
     .offers-screen {
-        align-items: flex-start;
-        display: flex;
         flex-direction: column-reverse;
+        align-items: flex-start;
         justify-content: center;
         padding: 4vh 6vw;
-        position: relative;
-        height: fit-content;
         width: 100vw;
+        height: fit-content;
     }
 
     .offers-screen .info-wrapper {
-        align-items: center;
-        display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         gap: 64px;
-        position: relative;
         width: 100vw;
     }
 
     .offers-screen .info-text-wrapper {
         width: 100%;
+        align-items: flex-start; /* если нужно «тянуть» текст слева */
     }
 
     .offers-screen .offer-main-text {
-        flex-direction: row;
-        gap: 16px;
         font-size: 52px;
-        font-weight: 700;
-        letter-spacing: -3.00px;
-        line-height: 90px;
-        margin-top: -1.00px;
-        display: flex;
-        align-items: flex-end;
     }
 
     .offers-screen .text-wrapper-3 {
-        color: #1b1376;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: -1.00px;
-        line-height: 30px;
-        position: relative;
         text-align: justify;
-        width: 100%
+        width: 100%;
     }
 }
 
+/* --- До 800px --- */
 @media (max-width: 800px) {
     .offers-screen {
-        align-items: flex-start;
-        display: flex;
-        position: relative;
         flex-direction: column-reverse;
+        align-items: flex-start;
         justify-content: space-between;
-        padding: 4vh 6vw;
+        padding: 40px 40px; /* меняем с 10px 80px */
         height: fit-content;
-
         overflow-x: hidden;
     }
 
     .offers-screen .info-wrapper {
-        align-items: center;
-        justify-content: center;
-        display: flex;
         flex-direction: column;
         gap: 24px;
-        position: relative;
         width: 100%;
     }
 
+    /* Старая кнопка прячем */
     .offers-screen .round-button {
         display: none;
     }
 
-    .offers-screen .offer-main-text {
-        color: transparent;
-        font-size: 40px;
-        font-weight: 700;
-        letter-spacing: -3.00px;
-        line-height: 90px;
-        margin-top: -1.00px;
-        position: relative;
-        white-space: nowrap;
-        width: 100%;
-    }
-
-    .offers-screen .text-wrapper-3 {
-        color: #1b1376;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: -1.00px;
-        line-height: 30px;
-        position: relative;
-        text-align: justify;
-        width: 100%
-    }
-
+    /* А новая мобильная кнопка + линк – показываем */
     .offers-screen .round-button2 {
-        align-items: center;
-        background-color: #660ff1;
-        border-radius: var(--responsive-button-border-radius);
-        border: none;
         display: flex;
-        height: 36px;
         justify-content: center;
-        position: relative;
-        transform: rotate(180deg);
+        align-items: center;
         width: 36px;
+        height: 36px;
+        background-color: #660ff1;
+        border: none;
+        border-radius: var(--responsive-button-border-radius);
+        transform: rotate(180deg);
+        position: relative;
     }
 
     .offers-screen .button2-container {
@@ -245,7 +205,7 @@
     }
 
     .offer-link {
-        display: flex;
+        display: flex; /* показываем линк */
     }
 
     .offers-screen .button2-container p {
@@ -259,8 +219,20 @@
         color: inherit;
         text-decoration: inherit;
     }
+
+    .offers-screen .offer-main-text {
+        font-size: 40px;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .offers-screen .text-wrapper-3 {
+        width: 100%;
+        text-align: justify;
+    }
 }
 
+/* --- От 1921px и выше --- */
 @media screen and (min-width: 1921px) {
     .offers-screen {
         padding: 32px 16vw;
@@ -274,6 +246,13 @@
     .offers-screen .text-wrapper-3 {
         font-size: 26px;
         width: 35vw;
-        text-align: justify;
     }
+}
+
+/* -------------------------
+   Переменные :root (общие)
+------------------------- */
+:root {
+    --responsive-size-24: 24px;
+    --responsive-button-border-radius: var(--responsive-size-24);
 }

@@ -1,186 +1,215 @@
 .screen-doctors {
-    align-items: center;
     display: flex;
-    height: 640px;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 32px 80px;
+    align-items: center;
+
+    /* Вместо жёсткой высоты — пусть блок растягивается.
+       Если нужна высота не меньше 640px, сделайте так:
+       min-height: 640px; */
+    /* height: 640px; <-- убираем */
+    min-height: 640px;
+
+    padding: 10px 80px;
     position: relative;
+    /* overflow: hidden; <-- убираем, чтобы текст не обрезался */
 }
 
-
+/* Зелёный круг на фоне */
 .green-circle {
     position: absolute;
-    right: 6vw; /* Смещение за границу */
+    right: 6vw;
     width: 400px;
     height: 400px;
-    background-color: #12ca97; /* Зеленый цвет */
+    background-color: #12ca97;
     border-radius: 50%;
-    z-index: -2; /* Уход в фон */
+    z-index: -2; /* уходит в фон */
 }
 
+/* Левая колонка (текст/кнопка) */
 .screen-doctors .frame {
     display: flex;
-    width: 525px;
     flex-direction: column;
     align-items: flex-start;
     gap: 92px;
+
+    /* Лучше max-width, чтобы не было жёсткого ограничения */
+    max-width: 525px;
+    width: 100%;
 }
 
+/* Обёртка для заголовка и текста */
 .screen-doctors .texts {
-    align-items: flex-start;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
     position: relative;
-    width: fit-content;
+    width: fit-content; /* или 100%, если хотите полную ширину */
 }
 
+/* Заголовок */
 .screen-doctors .doctor-main-text {
-    color: transparent;
-    font-size: 60px;
-    font-weight: 700;
-    letter-spacing: -3.00px;
-    line-height: 90px;
-    margin-top: -1.00px;
-    position: relative;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 16px;
-}
 
-.screen-doctors span {
-    color: #12ca97;
-    letter-spacing: -1.80px;
-}
-
-.screen-doctors .text-wrapper-2 {
-    color: #660ff1;
-    letter-spacing: -1.80px;
-}
-
-.screen-doctors .text-wrapper-3 {
-    width: 50vw;
-}
-
-
-.screen-doctors .button-all {
-    color: #FFF;
-    font-size: 24px;
-    font-weight: normal;
-    width: 383px;
-    height: 64px;
-    border: none;
-    flex-shrink: 0;
-    border-radius: 25px;
-    background: linear-gradient(90deg, #31E3B0 0%, #359BFA 100%);
-    transition: all 0.3s ease; /* Smooth transition */
-}
-
-.screen-doctors .button-all:hover {
-    cursor: pointer;
-    transform: scale(1.03); /* Small zoom effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06); /* Stronger shadow */
-}
-
-.screen-doctors .button-all:active {
-    background: linear-gradient(90deg, #2BC69D 0%, #2D8CE0 100%); /* Slightly darker gradient */
-    transform: scale(0.97); /* Slight shrink effect */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.09); /* Stronger shadow */
-}
-
-.screen-doctors .doctor-main-text {
     color: #660ff1;
     font-size: 60px;
     font-weight: 700;
-    letter-spacing: -3.00px;
+    letter-spacing: -3px;
     line-height: 90px;
-    margin-top: -1.00px;
+    margin-top: -1px;
     position: relative;
+
+    /* Если хотите, чтобы на больших экранах заголовок не переносился,
+       оставьте nowrap. Но тогда при слишком узком контейнере текст может вылезти.
+       В мобильном медиа-запросе вы уже делаете white-space: normal. */
     white-space: nowrap;
     width: fit-content;
 }
 
+/* Цвет для отдельных слов в заголовке */
+.screen-doctors span {
+    color: #12ca97;
+    letter-spacing: -1.8px;
+}
+.screen-doctors .text-wrapper-2 {
+    color: #660ff1;
+    letter-spacing: -1.8px;
+}
+
+/* Дополнительный текст/абзацы */
 .screen-doctors p {
     color: #1b1376;
     font-size: 20px;
     font-weight: 500;
-    letter-spacing: -1.00px;
+    letter-spacing: -1px;
     line-height: 30px;
+
     position: relative;
-    width: 525px;
+    /* Вместо жёсткой ширины 525px → max-width */
+    max-width: 525px;
+    width: 100%;
 }
 
+/* Если нужно, чтобы отдельный блок занимал max 50% экрана:
+   можно сделать так, а не жёсткий width: 50vw */
+.screen-doctors .text-wrapper-3 {
+    max-width: 50vw;
+}
+
+/* Кнопка «Подробнее о врачах» */
+.screen-doctors .button-all {
+    width: 383px;
+    height: 64px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #31E3B0 0%, #359BFA 100%);
+
+    color: #FFF;
+    font-size: 24px;
+    font-weight: normal;
+    flex-shrink: 0;
+
+    transition: all 0.3s ease; /* Плавная анимация */
+    cursor: pointer;
+}
+
+.screen-doctors .button-all:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.screen-doctors .button-all:active {
+    background: linear-gradient(90deg, #2BC69D 0%, #2D8CE0 100%);
+    transform: scale(0.97);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.09);
+}
+
+/* Контейнер для картинки */
 .screen-doctors .div-wrapper {
     display: flex;
     justify-content: center;
+
+    /* Картинка абсолютно позиционировалась внизу справа,
+       но из-за этого текст мог «налезать».
+       Если хотите оставить, пусть остается: */
     position: absolute;
     bottom: 0;
     right: 10vw;
 }
 
+/* Изображение врача */
 .screen-doctors .div-wrapper .doctor-image {
     width: 500px;
-    z-index: -1;
+    z-index: -1; /* под текстом */
 }
 
+/* ================== MEDIA QUERIES ================== */
+
+/* ~~~~~ Планшеты (от 1250px до 800px) ~~~~~ */
 @media (max-width: 1250px) and (min-width: 800px) {
+    .screen-doctors {
+        padding: 4vh 6vw;
+    }
+
     .green-circle {
         width: 280px;
         height: 280px;
     }
 
     .screen-doctors .div-wrapper .doctor-image {
-        width: 340px;
+        width: 360px;
+    }
+
+    .screen-doctors .button-all {
+        width: 250px;
+        height: 64px;
+        font-size: 20px;
     }
 }
 
+/* ~~~~~ Телефоны (до 800px) ~~~~~ */
 @media (max-width: 800px) {
     .green-circle {
-        width: 240px;
-        height: 240px;
-        right: 10vw; /* Смещение за границу */
+        width: 220px;
+        height: 220px;
+        right: 10vw;
         bottom: 8vw;
     }
 
     .screen-doctors {
-        align-items: flex-start;
-        display: flex;
-        position: relative;
         flex-direction: column;
+        align-items: flex-start;
         justify-content: space-between;
-        padding: 4vh 6vw 0 6vw;
-        height: fit-content;
 
+        /* не задаём фикс. высоту */
+        min-height: auto;
+        padding: 40px 40px 0 40px;
         overflow-x: hidden;
-
     }
 
     .screen-doctors .frame {
-        gap: 52px
+        gap: 52px;
+        max-width: 100%;
     }
 
+    /* На мобильном разрешаем перенос строк в заголовке */
     .screen-doctors .doctor-main-text {
-        color: transparent;
+        color: transparent; /* Если нужен градиент через background-clip */
         font-size: 40px;
-        font-weight: 700;
-        letter-spacing: -3.00px;
         line-height: 60px;
-        margin-top: -1.00px;
-        position: relative;
-        white-space: normal;
+        white-space: normal; /* перенос строк */
         width: 100%;
     }
 
     .texts .text-wrapper-3 {
         color: #1b1376;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: -1.00px;
-        line-height: 30px;
-        position: relative;
         text-align: justify;
-        width: 90vw
+        width: 100%;
+        min-width: calc(100vw - 80px);
     }
 
     .screen-doctors .button-container {
@@ -188,35 +217,32 @@
     }
 
     .screen-doctors .button-all {
-        width: fit-content;
+        width: fit-content; /* под контент */
+        height: 52px;
         padding: 0.5vh 20vw;
-        color: #FFF;
         font-size: 16px;
         font-weight: bold;
-        height: 64px;
-        border: none;
-        flex-shrink: 0;
-        border-radius: 25px;
-        background: linear-gradient(90deg, #31E3B0 0%, #359BFA 100%);
     }
 
+    /* Картинку убираем из абсолютного позиционирования,
+       чтобы она шла «в потоке» ниже текста */
     .screen-doctors .div-wrapper {
-        display: flex;
-        justify-content: flex-end;
         position: relative;
         width: 100%;
+        justify-content: flex-end;
+        margin-top: 16px; /* небольшой отступ при желании */
     }
 
     .screen-doctors .div-wrapper .doctor-image {
-        width: 300px;
+        width: 252px;
     }
 }
 
+/* ~~~~~ Большие экраны (4K и выше) ~~~~~ */
 @media screen and (min-width: 1921px) {
     .screen-doctors {
         padding: 32px 16vw;
     }
-
 
     .screen-doctors .div-wrapper .doctor-image {
         width: 600px;

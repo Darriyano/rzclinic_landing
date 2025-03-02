@@ -7,15 +7,20 @@ import "../../styles/main-page-offers.css";
 import {CardOffer} from "../card-offer";
 import {Link} from "react-router-dom";
 
+
 export const Offers = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? offers.length - 1 : prevIndex - 1));
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? offers.length - 1 : prevIndex - 1
+        );
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === offers.length - 1 ? 0 : prevIndex + 1));
+        setCurrentIndex((prevIndex) =>
+            prevIndex === offers.length - 1 ? 0 : prevIndex + 1
+        );
     };
 
     const handlers = useSwipeable({
@@ -48,8 +53,10 @@ export const Offers = () => {
                     <button className="round-button2" onClick={handlePrev}>
                         <img className="vector" alt="Round button" src={roundButtonleft}/>
                     </button>
-                    <Link to="/offering"><p className="offer-link">Все услуги</p></Link>
-                    <button className="round-button2" onClick={handlePrev}>
+                    <Link to="/offering">
+                        <p className="offer-link">Все&nbsp;услуги</p>
+                    </Link>
+                    <button className="round-button2" onClick={handleNext}>
                         <img className="vector" alt="Round button" src={roundButtonright}/>
                     </button>
                 </div>
@@ -60,7 +67,6 @@ export const Offers = () => {
                     <span className="span">Наши</span>
                     <span className="text-wrapper-2"> услуги</span>
                 </p>
-
                 <p className="text-wrapper-3">
                     В нашей стоматологической клинике мы предлагаем широкий спектр профессиональных
                     услуг для обеспечения здоровья и красоты ваших зубов. Мы заботимся о каждом пациенте и гарантируем

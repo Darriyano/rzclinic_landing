@@ -14,14 +14,12 @@
     color: inherit;
 }
 
-
 .wrapper .menu-tabs {
     display: flex;
     gap: 52px;
     list-style-type: none;
     width: 100%;
     align-items: center;
-
     justify-content: flex-end;
 
     color: #FFF;
@@ -87,37 +85,59 @@
     display: none;
 }
 
+.invisible-2 {
+    display: none;
+}
+
+.mobile-block {
+    display: none;
+}
+
+/* ================== MEDIA QUERIES ================== */
+
 @media (min-width: 920px) and (max-width: 1100px) {
     .wrapper {
-        padding: 10px 40px;
+        padding: 10px 40px; /* меняем с 10px 80px */
     }
 
-    .menu-tabs {
-        gap: 32px;
+    .wrapper .menu-tabs {
+        gap: 32px; /* меняем с 52px */
     }
-
 }
 
 @media (max-width: 920px) {
     .wrapper {
-        padding: 10px 40px;
-        width: 100vw;
-        gap: 1px
+        padding: 10px 40px; /* меняем с 10px 80px */
+        width: 100vw; /* меняем с 100% */
+        gap: 1px; /* добавляем */
+    }
+
+    .logo-header {
+        width: 40px;
     }
 
     .menu-tabs li {
-        display: none;
+        display: none; /* скрываем пункты меню */
     }
 
     .menu-tabs .menu-item {
-        display: none;
+        display: none; /* скрываем отдельные пункты меню */
     }
 
     .menu-tabs .call-button {
-        display: none;
+        display: none; /* скрываем кнопку */
     }
 
-    .invisible{
+    .mobile-block {
+        display: flex;
+        flex-direction: row;
+        gap: 20px
+    }
+
+    .invisible {
+        /* При мобильном разрешении делаем блок видимым,
+           а стили по сути повторяют логику call-button,
+           но тут оставить придётся, т.к. это другой класс */
         display: flex;
         padding: 10px 20px;
         align-items: center;
@@ -129,5 +149,25 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+    }
+
+    .invisible-2 {
+        display: flex;
+        background-color: transparent;
+    }
+}
+
+@media (max-width: 350px) {
+    .wrapper {
+        overflow: hidden;
+        padding: 10px 10px; /* меняем с 10px 80px */
+    }
+
+    .logo-header {
+        width: 40px;
+    }
+
+    .mobile-block {
+        gap: 10px
     }
 }

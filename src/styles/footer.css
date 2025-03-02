@@ -1,6 +1,6 @@
 .footer-screen {
     display: flex;
-    padding: 32px 80px;
+    padding: 40px 80px;
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
@@ -123,7 +123,7 @@
 
     .footer-screen {
         display: flex;
-        padding: 4vh 6vw;
+        padding: 40px 40px 0 40px;
         justify-content: space-between;
         align-items: flex-start;
         align-self: stretch;
@@ -142,7 +142,6 @@
     .footer-screen .first-text-block {
         gap: 14px;
     }
-
 
 
 }

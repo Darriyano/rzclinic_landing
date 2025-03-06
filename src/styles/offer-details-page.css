@@ -197,12 +197,12 @@
 }
 
 .accordeons-details .block summary::after {
-    content: "▶"; /* Закрытая стрелка */
+    content: "\25B6"; /* Черный треугольник вправо */
     transition: transform 0.2s;
 }
 
 .accordeons-details .block details[open] summary::after {
-    content: "▼"; /* Открытая стрелка */
+    content: "\25BC"; /* Черный треугольник вниз */
 }
 
 .accordeons-details .block details p {

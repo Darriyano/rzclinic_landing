@@ -72,13 +72,13 @@
 
 /* Стрелочка закрытого summary */
 .textframe summary::after {
-    content: "▶";
+    content: "\25B6"; /* Черный треугольник вправо */
     transition: transform 0.3s ease;
 }
 
 /* Стрелочка открытого summary */
 .textframe[open] summary::after {
-    content: "▼";
+    content: "\25BC"; /* Черный треугольник вниз */
 }
 
 /* Заголовки и тексты справа */

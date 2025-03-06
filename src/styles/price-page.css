@@ -95,11 +95,11 @@
 
 /* Стрелочки можно оставить как были */
 .accordeons .block summary::after {
-    content: "▶";
+    content: "\25B6"; /* Черный треугольник вправо */
     transition: transform 0.2s;
 }
 .accordeons .block details[open] summary::after {
-    content: "▼";
+    content: "\25BC"; /* Черный треугольник вниз */
 }
 
 .accordeons .block p {

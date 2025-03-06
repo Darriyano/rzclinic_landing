@@ -51,7 +51,6 @@ const AppointmentForm: React.FC = () => {
         e.preventDefault();
 
         if (validate()) {
-            // Показываем уведомление с помощью react-toastify
             toast.success('Успешно отправлено!', {
                 position: "top-center",
                 autoClose: 2000,
@@ -78,7 +77,8 @@ const AppointmentForm: React.FC = () => {
             <MobileButtonBack />
             <div className="form-intro-screen">
                 <form onSubmit={handleSubmit} className="appointment-form">
-                    <h2 className="form-heading">Запишитесь&nbsp;нa&nbsp;прием</h2>
+                    <h2 className="form-heading">Запишитесь нa&nbsp;прием</h2>
+                    <span>Mы гарантируем конфиденциальность персональных данных</span>
                     <div className="form-group">
                         <label htmlFor="firstName">Имя</label>
                         <input
@@ -110,7 +110,7 @@ const AppointmentForm: React.FC = () => {
                         {errors.phone && <span className="error">{errors.phone}</span>}
                     </div>
                     <div className="form-group">
-                        <label htmlFor="wish">Пожелание</label>
+                        <label htmlFor="wish">Пожелание или вопрос</label>
                         <textarea
                             id="wish"
                             value={wish}

@@ -78,8 +78,8 @@
     }
 }
 
-/* Для экранов меньше 800px */
-@media (max-width: 800px) {
+/* Для экранов меньше 945 */
+@media (max-width: 945px) {
     .offers-intro-screen {
         display: flex;
         flex-direction: column;
@@ -124,7 +124,7 @@
 }
 
 /* Для очень больших экранов */
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1500px) {
     .all-offers-wrapper {
         padding: 4vh 16vw;
         grid-template-columns: repeat(2, 1fr);
@@ -136,3 +136,18 @@
         height: fit-content;
     }
 }
+
+/* Для очень больших экранов */
+@media screen and (min-width: 2200px) {
+    .all-offers-wrapper {
+        padding: 4vh 16vw;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .all-offers-wrapper > :nth-child(2n-1),
+    .all-offers-wrapper > :nth-child(2n) {
+        justify-self: center;
+    }
+}
+

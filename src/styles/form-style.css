@@ -26,8 +26,12 @@
     font-size: 30px;
     font-weight: bold;
     color: #660FF1;
-    text-align: left;
-    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.appointment-form span {
+    text-align: justify;
+
 }
 
 /* Группа полей */

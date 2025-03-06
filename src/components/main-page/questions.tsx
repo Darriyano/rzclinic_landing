@@ -43,7 +43,7 @@ export const Questions = () => {
                     <p className="main-secondary">А вдруг ваш вопрос уже задавали?</p>
                 </div>
                 <button className="button-answer" onClick={() => {
-                    navigate("/contacts")
+                    navigate("/form")
                 }}>Моего вопроса тут нет
                 </button>
             </div>

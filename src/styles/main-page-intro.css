@@ -9,6 +9,7 @@
     align-self: stretch;
 
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .intro-text-wrapper {
@@ -201,16 +202,17 @@ h1 {
 @media (max-width: 450px) {
     .gaps h1 {
         font-size: 32px;
-        line-height: 32px;
+        line-height: 36px;
+        letter-spacing: -1.2px;
     }
 
-    .intro-button {
+    .intro .intro-button {
         border-radius: 45px;
-        padding: 8px 4px;
+        padding: 8px 8px;
         border: none;
         background: linear-gradient(90deg, #31E3B0 0%, #359BFA 100%);
         color: #FFF;
-        font-size: 12px;
+        font-size: 18px;
         font-weight: normal;
     }
 }

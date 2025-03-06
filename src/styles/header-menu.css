@@ -7,6 +7,8 @@
     align-self: stretch;
     width: 100%;
     background-color: #660FF1;
+
+    overflow: hidden;
 }
 
 .wrapper a {
@@ -112,8 +114,8 @@
         gap: 1px; /* добавляем */
     }
 
-    .logo-header {
-        width: 40px;
+    .wrapper .logo-header {
+        width: 32px;
     }
 
     .menu-tabs li {
@@ -135,9 +137,6 @@
     }
 
     .invisible {
-        /* При мобильном разрешении делаем блок видимым,
-           а стили по сути повторяют логику call-button,
-           но тут оставить придётся, т.к. это другой класс */
         display: flex;
         padding: 10px 20px;
         align-items: center;
@@ -160,23 +159,10 @@
 @media (max-width: 400px) {
     .wrapper {
         overflow: hidden;
-        padding: 10px 10px; /* меняем с 10px 80px */
+        padding: 10px 30px; /* меняем с 10px 80px */
     }
 
-    .logo-header {
-        width: 40px;
-    }
-
-    .mobile-block {
-        gap: 10px
-    }
-
-
-    .invisible {
-        width: 150px;
-        height: 45px;
-        font-size: 12px;
-        transition: all 0.3s ease; /* Smooth transition */
-        margin-right: 20px;
+    .wrapper .logo-header {
+        width: 30px;
     }
 }

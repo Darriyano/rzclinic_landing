@@ -70,7 +70,7 @@
     }
 
     .doctors-intro-screen .secondary {
-        text-align: right;
+        text-align: justify;
         width: 100%;
     }
 
@@ -152,24 +152,46 @@
     }
 
 
-
     .all-doctors-wrapper > :nth-child(2n-1),
     .all-doctors-wrapper > :nth-child(2n) {
         justify-self: center;
     }
 }
 
+
 /* Для очень больших экранов */
-@media (min-width: 1921px) {
+@media (min-width: 1500px) {
     .all-doctors-wrapper {
         padding: 4vh 16vw;
         grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
+        /*justify-items: center;*/
+    }
+
+    /* Выравнивание карточек */
+    .all-doctors-wrapper > :nth-child(2n-1) {
+        justify-self: start;
+    }
+
+    .all-doctors-wrapper > :nth-child(2n) {
+        justify-self: end;
     }
 
     .doctors-intro-screen {
         padding: 4vh 16vw;
         height: fit-content;
+    }
+}
+
+
+@media (min-width: 2200px) {
+    .all-doctors-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .all-doctors-wrapper > :nth-child(2n-1),
+    .all-doctors-wrapper > :nth-child(2n) {
+        justify-self: center;
     }
 }
 

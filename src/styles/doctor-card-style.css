@@ -1,11 +1,39 @@
-/* Container for the flip card */
+/* Контейнер для карточки с эффектом волн */
 .doctor-card {
     width: 484px;
     min-height: 593px;
     perspective: 1000px;
+    position: relative; /* необходимо для позиционирования внутренних элементов */
+    overflow: visible;
+    cursor: pointer;
 }
 
-/* Inner wrapper that holds both sides */
+/* Дополнительный элемент для анимации границы */
+.animated-border {
+    position: absolute;
+    top: -4px;    /* смещение для учета толщины границы */
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 25px; /* чтобы совпадало с .card-inner */
+    background: linear-gradient(45deg, #c6a7f1, #12CA97, #c6a7f1, #c6a7f1);
+    background-size: 400%;
+    animation: borderShimmer 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ключевые кадры анимации для переливающейся границы */
+@keyframes borderShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 400% 50%;
+    }
+}
+
+/* Внутренний блок карточки */
 .card-inner {
     position: relative;
     width: 100%;
@@ -14,18 +42,21 @@
     transform-style: preserve-3d;
     border-radius: 25px;
     box-shadow: 0px 0px 15px 0px rgba(150, 150, 150, 0.25);
+    z-index: 2; /* чтобы контент был поверх animated-border */
 }
 
 .card-inner.flipped {
     transform: rotateY(180deg);
 }
 
-/* Flip animation on hover */
-.doctor-card:hover .card-inner {
-    transform: rotateY(180deg);
+/* Эффект hover для устройств с поддержкой hover */
+@media (hover: hover) {
+    .doctor-card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
 }
 
-/* Both sides of the card */
+/* Стили для обеих сторон карточки */
 .card-front,
 .card-back {
     position: absolute;
@@ -40,7 +71,7 @@
     align-items: center;
 }
 
-/* Front Side Styles */
+/* Лицевая сторона */
 .card-front {
     background: white;
 }
@@ -72,9 +103,9 @@
     margin-top: 8px;
 }
 
-/* Back Side Styles */
+/* Обратная сторона */
 .card-back {
-    background: #12CA97; /* Change this color as needed */
+    background: #12CA97;
     color: #fff;
     transform: rotateY(180deg);
     text-align: left;
@@ -92,11 +123,11 @@
 @media (max-width: 800px) {
     .doctor-card {
         width: 85vw;
-        height: auto;
+        height: 300px;
     }
 
     .card-front img {
-        width: 300px;
+        width: 400px;
         max-width: 100%;
         border-radius: 15px;
     }

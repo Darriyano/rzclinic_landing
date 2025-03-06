@@ -10,7 +10,7 @@ export const Intro = () => {
             <div className="intro-text-wrapper">
                 <div className="gaps">
                     <h1 className="main-text">Мы создаем улыбки, которые меняют жизни людей!</h1>
-                    <div className="secondary-text"> Это реальность!</div>
+                    <div className="secondary-text">Клиника Зульфии Рамазановой</div>
                 </div>
                 <button className="intro-button" onClick={() => navigate("/form")}>
                     Записаться на&nbsp;прием

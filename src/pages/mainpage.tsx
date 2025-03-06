@@ -16,7 +16,7 @@ const MainPage = () => {
     return (<>
         <Header/>
         <Intro/>
-        <About/>
+        {/*<About/>*/}
         <Offers/>
         <Doctors/>
         <Questions/>

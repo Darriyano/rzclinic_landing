@@ -52,7 +52,7 @@
 
 .accordeons .section p {
     color: #1b1376;
-    text-align: justify;
+    text-align: left;
     font-size: 24px;
     font-weight: bold;
     line-height: 100%; /* 28px */
@@ -179,7 +179,7 @@
         letter-spacing: -1.00px;
         line-height: 25px;
         position: relative;
-        text-align: justify;
+        text-align: left;
         width: 100%;
     }
 

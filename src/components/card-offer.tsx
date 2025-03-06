@@ -12,7 +12,7 @@ interface CardOff {
 export const CardOffer = ({id, title, description, image}: CardOff) => {
     const navigate = useNavigate();
     const link: string = "/offer-details/" + id.toString();
-    const link2: string = "/contacts";
+    const link2: string = "/form";
 
 
     return (

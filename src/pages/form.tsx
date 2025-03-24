@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/form-style.css";
 import Header from "../components/header";
-import {MobileButtonBack} from "../components/mobile-button-back";
-import {ToastContainer, toast} from 'react-toastify';
+import { MobileButtonBack } from "../components/mobile-button-back";
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Footer} from "../components/footer";
+import { Footer } from "../components/footer";
+import emailjs from 'emailjs-com';
 
 const AppointmentForm: React.FC = () => {
     useEffect(() => {
@@ -55,30 +56,50 @@ const AppointmentForm: React.FC = () => {
         e.preventDefault();
 
         if (validate()) {
-            toast.success('Успешно отправлено!', {
-                position: "top-center",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            const templateParams = {
+                firstName,
+                lastName,
+                phone,
+                wish
+            };
 
-            // Здесь можно добавить логику отправки данных на сервер
+            emailjs.send('your_service_id', 'template_knxpuci', templateParams, 'VDv6lWTIlQ88ULoWx')
+                .then((response) => {
+                    console.log('Email sent successfully', response);
+                    toast.success('Успешно отправлено!', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                    });
 
-            // Сброс полей формы
-            setFirstName('');
-            setLastName('');
-            setPhone('');
-            setWish('');
-            setErrors({});
+                    // Сброс полей формы
+                    setFirstName('');
+                    setLastName('');
+                    setPhone('');
+                    setWish('');
+                    setErrors({});
+                })
+                .catch((error) => {
+                    console.log('Error sending email', error);
+                    toast.error('Ошибка при отправке, попробуйте еще раз!', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                    });
+                });
         }
     };
 
     return (
         <>
-            <Header/>
-            <MobileButtonBack/>
+            <Header />
+            <MobileButtonBack />
             <div className="form-intro-screen">
                 <form onSubmit={handleSubmit} className="appointment-form">
                     <h2 className="form-heading">Запишитесь нa&nbsp;прием</h2>
@@ -128,8 +149,8 @@ const AppointmentForm: React.FC = () => {
                     </button>
                 </form>
             </div>
-            <ToastContainer/>
-            <Footer/>
+            <ToastContainer />
+            <Footer />
         </>
     );
 };
